@@ -6,6 +6,7 @@ public class Main {
         System.out.println(" Gestor de Inventario de Tienda ");
         System.out.println("Prueba de enlace");
         System.out.println("Otra prueba");
+        System.out.println("Prueba de inventario");
 
     }
 }
