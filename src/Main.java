@@ -1,6 +1,6 @@
 /*
     Este programa permite gestionar el inventario de una tienda.
-    Se puede Agregar, listar, actualizar y eliminar productos
+    Se puede Agregar, listar, actualizar y eliminar productos.
 */
 
 import java.util.Scanner;
