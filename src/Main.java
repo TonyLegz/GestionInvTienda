@@ -11,6 +11,9 @@ public class Main {
         int opcion = 0;
         int cantidad = 0;
 
+        String [] nombreProducto = new String[cantidad];
+        int [] cantidadProducto = new int [cantidad];
+
         System.out.println("  GESTOR DE INVENTARIO  ");
         do {
             System.out.println("  ELIJA  UNA OPCION  ");
@@ -19,9 +22,7 @@ public class Main {
             System.out.println(" 3. Actualizar cantidad de un Producto  ");
             System.out.println(" 4. Eliminar Producto  ");
             System.out.println(" 0. Salir");
-            System.out.println(" Ingrese una opcion  ");
-            opcion = teclado.nextInt();
-            System.out.printf("Opcion: ");
+            System.out.printf("Opcion: "); opcion = teclado.nextInt();
 
             if (opcion == 1)
             {
@@ -30,12 +31,13 @@ public class Main {
 
                 teclado.nextLine();
 
-                String [] nombreProducto = new String[cantidad];
-                int [] cantidadProducto = new int [cantidad];
+                nombreProducto = new String[cantidad];
+                cantidadProducto = new int [cantidad];
 
                 for(int i = 0; i < cantidad; i++){
                     System.out.println("Nombre del producto: ");  nombreProducto[i] = teclado.next();
                     System.out.println("Cantidad del producto: ");  cantidadProducto[i] = teclado.nextInt();
+                    teclado.nextLine();
                 }
             }
             else
@@ -44,9 +46,9 @@ public class Main {
                 {
                     System.out.println("Usted a ingresado los siguientes productos: ");
 
-                    String [] nombreProducto = new String[cantidad];
                     for(int i = 0; i < cantidad; i++){
-                        System.out.printf((i+1)+". "+ nombreProducto[i]);
+                        System.out.println("Producto " + (i+1) + " :  " + nombreProducto[i]);
+                        System.out.println("Cantidad " + (i+1) + " :  " + cantidadProducto[i]);
                     }
                 }
                 else
