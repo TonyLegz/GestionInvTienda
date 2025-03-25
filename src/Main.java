@@ -44,7 +44,7 @@ public class Main {
             {
                 if (opcion == 2)
                 {
-                    System.out.println("Usted a ingresado los siguientes productos: ");
+                    System.out.println("Usted ingreso los siguientes productos: ");
 
                     for(int i = 0; i < cantidad; i++){
                         System.out.println("Producto: " + (i+1));
@@ -57,14 +57,14 @@ public class Main {
                     if (opcion == 3)
                     {
                         System.out.println("Actualizar cantidad de producto: ");
-                        System.out.println("Introduce la posicion del producto que quieres modificar cantidad: ");
+                        System.out.println("Introduzca la posicion del producto que quieres modificar cantidad: ");
                         int posicionModificar = teclado.nextInt();
 
-                        if(posicionModificar >= 0 && posicionModificar<cantidad){
+                        if(posicionModificar >= 1 && posicionModificar<=cantidad){
                             System.out.println("Ingrese el nuevo valor de cantidad: ");
                             int nuevaCantidad = teclado.nextInt();
 
-                            cantidadProducto[posicionModificar]=nuevaCantidad;
+                            cantidadProducto[posicionModificar-1]=nuevaCantidad;
                         }else{
                             System.out.println("Posicion no valida.");
                         }
@@ -74,6 +74,17 @@ public class Main {
                         if (opcion == 4)
                         {
                             System.out.println("Eliminar producto: ");
+                            System.out.printf("Introdezca la posicion del producto que quiere eliminar: ");
+                            int posicionEliminar = teclado.nextInt();
+
+                            if(posicionEliminar >= 1 && posicionEliminar<=cantidad){
+                                for(int i = posicionEliminar; i < cantidad; i++){
+                                  nombreProducto[i-1]=nombreProducto[i];
+                                }
+                                cantidad--;
+                            }else{
+                                System.out.println("Posicion no valida.");
+                            }
 
                         }
                         else
