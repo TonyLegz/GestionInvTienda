@@ -22,7 +22,7 @@ public class Main {
             System.out.println(" 3. Actualizar cantidad de un Producto  ");
             System.out.println(" 4. Eliminar Producto  ");
             System.out.println(" 0. Salir");
-            System.out.println("Opcion: "); opcion = teclado.nextInt();
+            System.out.print("Opcion: "); opcion = teclado.nextInt();
 
             if (opcion == 1)
             {
