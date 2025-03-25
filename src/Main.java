@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int opcion;
+        int opcion = 0;
         int cantidad = 0;
 
         String [] nombreProducto = new String[cantidad];
@@ -22,7 +22,7 @@ public class Main {
             System.out.println(" 3. Actualizar cantidad de un Producto  ");
             System.out.println(" 4. Eliminar Producto  ");
             System.out.println(" 0. Salir");
-            System.out.print("Opcion: "); opcion = teclado.nextInt();
+            System.out.println("Opcion: "); opcion = teclado.nextInt();
 
             if (opcion == 1)
             {
@@ -44,27 +44,27 @@ public class Main {
             {
                 if (opcion == 2)
                 {
-                    System.out.println("Usted ingreso los siguientes productos: ");
+                    System.out.println("Usted a ingresado los siguientes productos: ");
 
                     for(int i = 0; i < cantidad; i++){
-                        System.out.println("Producto #" + (i+1));
-                        System.out.println("\tNombre:  " + nombreProducto[i]);
-                        System.out.println("\tCantidad:  " + cantidadProducto[i]);
+                        System.out.println("Producto: " + (i+1));
+                        System.out.println("Nombre:  " + nombreProducto[i]);
+                        System.out.println("Cantidad:  " + cantidadProducto[i]);
                     }
                 }
                 else
                 {
                     if (opcion == 3)
-                   {
+                    {
                         System.out.println("Actualizar cantidad de producto: ");
-                        System.out.println("Introduzca la posicion del producto que quieres modificar cantidad: ");
+                        System.out.println("Introduce la posicion del producto que quieres modificar cantidad: ");
                         int posicionModificar = teclado.nextInt();
 
-                        if(posicionModificar >= 1 && posicionModificar<=cantidad){
+                        if(posicionModificar >= 0 && posicionModificar<cantidad){
                             System.out.println("Ingrese el nuevo valor de cantidad: ");
                             int nuevaCantidad = teclado.nextInt();
 
-                            cantidadProducto[posicionModificar-1]=nuevaCantidad;
+                            cantidadProducto[posicionModificar]=nuevaCantidad;
                         }else{
                             System.out.println("Posicion no valida.");
                         }
@@ -74,17 +74,6 @@ public class Main {
                         if (opcion == 4)
                         {
                             System.out.println("Eliminar producto: ");
-                            System.out.println("Introdezca la posicion del producto que quiere eliminar: ");
-                            int posicionEliminar = teclado.nextInt();
-
-                            if(posicionEliminar >= 1 && posicionEliminar<=cantidad){
-                                for(int i = posicionEliminar; i < cantidad; i++){
-                                  nombreProducto[i-1]=nombreProducto[i];
-                                }
-                                cantidad--;
-                            }else{
-                                System.out.println("Posicion no valida.");
-                            }
 
                         }
                         else
