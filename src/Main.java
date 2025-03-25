@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int opcion = 0;
+        int opcion;
         int cantidad = 0;
 
         String [] nombreProducto = new String[cantidad];
@@ -47,9 +47,9 @@ public class Main {
                     System.out.println("Usted a ingresado los siguientes productos: ");
 
                     for(int i = 0; i < cantidad; i++){
-                        System.out.println("Producto: " + (i+1));
-                        System.out.println("Nombre:  " + nombreProducto[i]);
-                        System.out.println("Cantidad:  " + cantidadProducto[i]);
+                        System.out.println("Producto#" + (i+1));
+                        System.out.println("\tNombre:  " + nombreProducto[i]);
+                        System.out.println("\tCantidad:  " + cantidadProducto[i]);
                     }
                 }
                 else
@@ -64,7 +64,7 @@ public class Main {
                             System.out.println("Ingrese el nuevo valor de cantidad: ");
                             int nuevaCantidad = teclado.nextInt();
 
-                            cantidadProducto[posicionModificar]=nuevaCantidad;
+                            cantidadProducto[posicionModificar-1]=nuevaCantidad;
                         }else{
                             System.out.println("Posicion no valida.");
                         }
@@ -74,6 +74,19 @@ public class Main {
                         if (opcion == 4)
                         {
                             System.out.println("Eliminar producto: ");
+                            System.out.println("Introduzca la posicion del producto que quiere eliminar: ");
+
+                            int posicionEliminar = teclado.nextInt();
+
+                            if(posicionEliminar >= 1 && posicionEliminar<=cantidad){
+                                for(int i = posicionEliminar; i < cantidad; i++){
+                                    nombreProducto[posicionEliminar-1]=nombreProducto[i];
+                                    cantidadProducto[posicionEliminar-1]=cantidadProducto[i];
+                                }
+                                cantidad--;
+                            }else{
+                                System.out.println("Posicion no valida.");
+                            }
 
                         }
                         else
