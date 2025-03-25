@@ -22,7 +22,7 @@ public class Main {
             System.out.println(" 3. Actualizar cantidad de un Producto  ");
             System.out.println(" 4. Eliminar Producto  ");
             System.out.println(" 0. Salir");
-            System.out.printf("Opcion: "); opcion = teclado.nextInt();
+            System.out.println("Opcion: "); opcion = teclado.nextInt();
 
             if (opcion == 1)
             {
@@ -47,21 +47,34 @@ public class Main {
                     System.out.println("Usted a ingresado los siguientes productos: ");
 
                     for(int i = 0; i < cantidad; i++){
-                        System.out.println("Producto " + (i+1) + " :  " + nombreProducto[i]);
-                        System.out.println("Cantidad " + (i+1) + " :  " + cantidadProducto[i]);
+                        System.out.println("Producto: " + (i+1));
+                        System.out.println("Nombre:  " + nombreProducto[i]);
+                        System.out.println("Cantidad:  " + cantidadProducto[i]);
                     }
                 }
                 else
                 {
                     if (opcion == 3)
                     {
-                        System.out.println("Cantidad de producto: ");
+                        System.out.println("Actualizar cantidad de producto: ");
+                        System.out.println("Introduce la posicion del producto que quieres modificar cantidad: ");
+                        int posicionModificar = teclado.nextInt();
+
+                        if(posicionModificar >= 0 && posicionModificar<cantidad){
+                            System.out.println("Ingrese el nuevo valor de cantidad: ");
+                            int nuevaCantidad = teclado.nextInt();
+
+                            cantidadProducto[posicionModificar]=nuevaCantidad;
+                        }else{
+                            System.out.println("Posicion no valida.");
+                        }
                     }
                     else
                     {
                         if (opcion == 4)
                         {
                             System.out.println("Eliminar producto: ");
+
                         }
                         else
                         {
@@ -79,30 +92,6 @@ public class Main {
             }
         }
             while (opcion < 5) ;
-
-
-
-
-
-
-     /*   System.out.println("Ingrese un nombre ");
-        String nombreProd = teclado.next();
-
-      // String [] nombre = new String[10];
-       ArrayList<String> productos = new ArrayList<>();
-        //productos.add(nombre);
-
-      System.out.println("Lista de productos ");
-        for (String nombre : productos) {
-            System.out.println(nombre);
-        }
-
-       System.out.println("-------------");
-        productos.set(0,"Aceite");
-        for (String producto : productos) {
-            System.out.println(producto
-            );
-        }*/
 
     }
 }
