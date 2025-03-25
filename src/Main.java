@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        int opcion = 0;
+        int opcion;
         int cantidad = 0;
 
         String [] nombreProducto = new String[cantidad];
@@ -74,7 +74,7 @@ public class Main {
                         if (opcion == 4)
                         {
                             System.out.println("Eliminar producto: ");
-                            System.out.printf("Introdezca la posicion del producto que quiere eliminar: ");
+                            System.out.println("Introdezca la posicion del producto que quiere eliminar: ");
                             int posicionEliminar = teclado.nextInt();
 
                             if(posicionEliminar >= 1 && posicionEliminar<=cantidad){
