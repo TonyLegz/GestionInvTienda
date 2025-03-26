@@ -60,7 +60,7 @@ public class Main {
                         System.out.println("Introduce la posicion del producto que quieres modificar cantidad: ");
                         int posicionModificar = teclado.nextInt();
 
-                        if(posicionModificar >= 0 && posicionModificar<cantidad){
+                        if(posicionModificar >= 1 && posicionModificar<=cantidad){
                             System.out.println("Ingrese el nuevo valor de cantidad: ");
                             int nuevaCantidad = teclado.nextInt();
 
